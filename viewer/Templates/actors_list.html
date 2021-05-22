@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Actors list 1</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Surname</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">Nationality</th>
+            <th scope="col">Birthdate</th>
+            <th scope="col">Deceased</th>
+            <th scope="col">Date of death</th>
+
+        </tr>
+    <tbody>
+        {% for actor in object_list %}
+    <tr>
+        <th scope="row">{{ actor.id }}</th>
+            <td>{{ actor.surname }}</td>
+            <td>{{ actor.firstname }}</td>
+            <td>{{ actor.nationality }}</td>
+            <td>{{ actor.was_born }}</td>
+            <td>{{ actor.deceased }}</td>
+            <td>
+            {% if actor.deceased %}
+                {{ actor.died }}
+            {% else %}
+                 ---
+            {% endif %}
+    </tr>
+        {% endfor %}
+    </tbody>
+    </thead>
+
+{% endblock %}

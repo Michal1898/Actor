@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Ahoj Miki</h1>
+    <p>
+        We are going to travel to:
+        {% for city in cities %}
+
+            {% if city == 'Ostrava' %}
+                Banik Pica Banik
+            {% else %}
+                {{ city }}
+            {% endif %}
+
+        {% endfor %}
+    </p>
+    <p>
+    We are using {{ transport }}
+    </p>
+
+{% endblock %}
